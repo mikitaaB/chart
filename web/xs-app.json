@@ -1,0 +1,55 @@
+{
+	"welcomeFile": "index.html",
+	"authenticationMethod": "route",
+	"logout": {
+		"logoutPage": "/logout.html",
+		"logoutEndpoint": "/logout"
+	},
+	"routes": [{
+		"source": "/api/country",
+		"target": "/country",
+		"destination": "backend",
+		"csrfProtection": false,
+		"authenticationType": "xsuaa",
+		"httpMethods": ["GET"],
+		"scope": "$XSAPPNAME.View"
+	}, {
+		"source": "/api/timeseries",
+		"target": "/timeseries",
+		"destination": "backend",
+		"csrfProtection": false,
+		"authenticationType": "xsuaa",
+		"httpMethods": ["GET"],
+		"scope": "$XSAPPNAME.View"
+	}, {
+		"source": "/api/chartType",
+		"target": "/chartType",
+		"destination": "backend",
+		"csrfProtection": false,
+		"authenticationType": "xsuaa",
+		"httpMethods": ["GET"],
+		"scope": "$XSAPPNAME.View"
+	}, {
+		"source": "/api/periodType",
+		"target": "/periodType",
+		"destination": "backend",
+		"csrfProtection": false,
+		"authenticationType": "xsuaa",
+		"httpMethods": ["GET"],
+		"scope": "$XSAPPNAME.View"
+	}, {
+		"source": "^/api/(.*)$",
+		"target": "/$1",
+		"destination": "backend",
+		"csrfProtection": true,
+		"authenticationType": "xsuaa",
+		"httpMethods": ["GET"],
+		"scope": "$XSAPPNAME.View"
+	}, {
+		"source": "(.*)(.xsjs)",
+		"destination": "backend",
+		"csrfProtection": false,
+		"authenticationType": "xsuaa",
+		"scope": "$XSAPPNAME.View"
+	}]
+}

@@ -1,0 +1,20 @@
+{
+	"xsappname": "chart",
+	"scopes": [{
+		"name": "$XSAPPNAME.View",
+		"description": "View"
+	}, {
+		"name": "$XSAPPNAME.Filter",
+		"description": "Filter"
+	}],
+
+	"role-templates": [{
+		"name": "View",
+		"description": "Just view",
+		"scope-references": ["$XSAPPNAME.View"]
+	}, {
+		"name": "Filter",
+		"description": "Enable filtering",
+		"scope-references": ["$XSAPPNAME.Filter"]
+	}]
+}

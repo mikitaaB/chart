@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>OPA tests</title>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta charset="utf-8">
+	<script
+		id="sap-ui-bootstrap"
+		src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+		data-sap-ui-resourceroots='{
+			"my.chart.web": "../../",
+			"test.integration": "./"
+		}'>
+	</script>
+	<script src="../../util/d3.v5.min.js"></script>
+	<script>
+		jQuery.sap.require("sap.ui.qunit.qunit-css");
+		jQuery.sap.require("sap.ui.thirdparty.qunit");
+		jQuery.sap.require("sap.ui.qunit.qunit-junit");
+		jQuery.sap.require("sap.ui.qunit.qunit-coverage");
+
+		jQuery.sap.require("test.integration.NavigationJourney");
+		jQuery.sap.require("test.integration.pages.App");
+	</script>
+</head>
+<body>
+	<div id="content"></div>
+	<h1 id="qunit-header">OPA tests</h1>
+	<h2 id="qunit-banner"></h2>
+	<h2 id="qunit-userAgent"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<ol id="qunit-tests"></ol>
+	<div id="qunit-fixture"></div>
+</body>
+</html>

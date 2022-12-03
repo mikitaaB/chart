@@ -1,0 +1,92 @@
+.axis path, .axis line {
+	fill: none;
+	stroke: #333;
+}
+.lineConfirmed, .lineRecovered, .lineDeaths,
+.confirmedMarkers, .recoveredMarkers, .deathsMarkers,
+.confirmedText, .recoveredText, .deathsText {
+	clip-path: url(#clip);
+}
+.barConfirmed, .barRecovered, .barDeaths {
+	clip-path: url(#clipBar);
+}
+.subBarConfirmed, .subBarRecovered, .subBarDeaths {
+	clip-path: url(#clipSubBar);
+}
+.confirmedText, .recoveredText, .deathsText {
+	font-size: 10px;
+	pointer-events: none;
+}
+.confirmedMarkers {
+	stroke: #FFA500;
+    fill: #FFA500;
+}
+.recoveredMarkers {
+	stroke: #008000;
+    fill: #008000;
+}
+.deathsMarkers {
+	stroke: #FF0000;
+    fill: #FF0000;
+}
+div.tooltip {	
+	position: absolute;
+	text-align: left;
+	width: auto;
+	height: auto;
+	padding: 3px;
+	font: 12px sans-serif;
+	background-color: #FFFFFF;
+	box-shadow: 2px 2px 4px #888888;
+	border: 1px;
+	border-radius: 8px;
+	pointer-events: none;
+	opacity: 0;
+}
+.bars {
+	opacity: 0.8;
+}
+.barConfirmed, .subBarConfirmed {
+	fill: #FFA500;
+}
+.barRecovered, .subBarRecovered {
+	fill: #008000;
+}
+.barDeaths, .subBarDeaths {
+	fill: #FF0000;
+}
+.zoom {
+	fill: none;
+	pointer-events: all;
+}
+.choiseSel {
+	fill: #008000;
+	stroke: #000000;
+}
+.choise {
+	fill: #FFFFFF;
+	stroke: #000000;
+}
+.grid-line {
+	stroke: lightgrey;
+	stroke-opacity: 0.2;
+	shape-rendering: crispEdges;
+}
+.lineChartTitle, .barChartTitle {
+	font-size: 20px;
+	font-family: "Times New Roman";
+}
+.x-mouse-line, .y-mouse-line {
+	stroke: #000000;
+	stroke-dasharray: 3,3;
+	stroke-width: 1px;
+	opacity: 0;
+}
+.legendGroup {
+	outline: 1px solid #000000;
+	outline-offset: 2px;
+}
+.svgStyle {
+	background-color: #FFFFFF;
+	box-shadow: 5px 5px 8px #888888;
+}

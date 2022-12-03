@@ -1,0 +1,102 @@
+{
+	"format_version": 1,
+	"imports": [{
+		"target_table": "chronicleDB.Country",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "country.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"COUNTRYCODE",
+				"COUNTRYNAMEEN",
+				"COUNTRYNAMERU"
+			]
+		},
+		"column_mappings": {
+			"COUNTRYCODE": 1,
+			"COUNTRYNAMEEN": 2,
+			"COUNTRYNAMERU": 3
+		}
+	}, {
+		"target_table": "chronicleDB.PeriodType",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "periodType.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"PERIODCODE",
+				"PERIODNAMEEN",
+				"PERIODNAMERU"
+			]
+		},
+		"column_mappings": {
+			"PERIODCODE": 1,
+			"PERIODNAMEEN": 2,
+			"PERIODNAMERU": 3
+		}
+	}, {
+		"target_table": "chronicleDB.ChartType",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "chartType.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"CHARTCODE",
+				"CHARTNAMEEN",
+				"CHARTNAMERU"
+			]
+		},
+		"column_mappings": {
+			"CHARTCODE": 1,
+			"CHARTNAMEEN": 2,
+			"CHARTNAMERU": 3
+		}
+	}, {
+		"target_table": "chronicleDB.Timeseries",
+		"source_data": {
+			"data_type": "CSV",
+			"file_name": "timeseries.csv",
+			"has_header": false,
+			"dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+		},
+		"import_settings": {
+			"import_columns": [
+				"TIMESERIESID",
+				"COUNTRYCODE",
+				"DATE",
+				"CONFIRMED",
+				"RECOVERED",
+				"DEATHS"
+			]
+		},
+		"column_mappings": {
+			"TIMESERIESID": 1,
+			"COUNTRYCODE": 2,
+			"DATE": 3,
+			"CONFIRMED": 4,
+			"RECOVERED": 5,
+			"DEATHS": 6
+		}
+	}]
+}

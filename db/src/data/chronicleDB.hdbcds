@@ -1,0 +1,28 @@
+context chronicleDB {
+	entity ChartType {
+		key CHARTCODE	: String(10);
+			CHARTNAMEEN : String(20);
+			CHARTNAMERU : String(20);
+	};
+
+	entity PeriodType {
+		key PERIODCODE   : String(10);
+			PERIODNAMEEN : String(40);
+			PERIODNAMERU : String(40);
+	};
+
+	entity Country {
+		key COUNTRYCODE   : String(5);
+			COUNTRYNAMEEN : String(40);
+			COUNTRYNAMERU : String(40);
+	};
+
+	entity Timeseries {
+		key TIMESERIESID: Integer;
+			COUNTRYCODE	: String(5);
+			DATE		: LocalDate;
+			CONFIRMED	: Integer;
+			RECOVERED	: Integer;
+			DEATHS		: Integer;
+	};
+};

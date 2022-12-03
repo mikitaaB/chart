@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv='Content-Type' content='text/html;charset=UTF-8' />
+<title>D3 Chart</title>
+<script 
+	id="sap-ui-bootstrap" 
+	src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+	data-sap-ui-theme="sap_bluecrystal"
+	data-sap-ui-resourceroots='{
+		"my.chart.web": "../../"
+	}'
+	data-sap-ui-libs='sap.m, sap.ui.layout'
+	data-sap-ui-bindingSyntax="complex"
+	data-sap-ui-oninit="module:my/chart/web/test/initMockServer"
+	data-sap-ui-compatVersion="1.80"
+	data-sap-ui-async="true">
+</script>
+<script src="../util/d3.v5.min.js"></script>
+<script>
+	window.onload = function() {
+		sap.ui.component({
+			async: true,
+			name: "my.chart.web",
+			id: "my.chart.web"
+		}).then(function(Component) {
+			new sap.m.Shell({
+				showLogout: false,
+				appWidthLimited: false,
+				app: new sap.ui.core.ComponentContainer({
+					component: Component
+				})
+			}).placeAt("content");
+		});
+	}
+</script>
+</head>
+<body class="sapUiBody" role="application">
+	<div id="content"></div>
+</body>
+</html>

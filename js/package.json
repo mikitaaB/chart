@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+	"@sap/hdbext": "^6.2.2",
+	"@sap/xsenv": "^2.2.0",
+	"@sap/xssec": "^2.2.5",
+	"@sap/xsjs": "^5.3.1",
+	"express": "^4.17.1",
+	"passport": "^0.4.0"
+  },
+  "description": "my description",
+  "devDependencies": {
+	"jest": "^23.6.0",
+	"jest-junit": "^5.2.0"
+  },
+  "files": [],
+  "main": "server.js",
+  "name": "js",
+  "scripts": {
+	"test": "node node_modules/jest/bin/jest --config jest.json",
+	"test-coverage": "node node_modules/jest/bin/jest --coverage --config jest.json",
+	"start": "node server.js"
+  },
+  "engines": {
+	"node": "8.x"
+  },
+  "version": "1.0.0"
+}

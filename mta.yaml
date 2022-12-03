@@ -1,0 +1,52 @@
+ID: chart
+_schema-version: '2.1'
+version: 0.1.0
+resources:
+  - name: hdi_db
+    parameters:
+      config:
+        schema: DB
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: uaa
+    type: com.sap.xs.uaa-space
+    parameters:
+      path: xs-security.json
+  - name: sapUI5_v160
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: sapui5_sb
+      service-plan: sapui5-1.60
+modules:
+  - name: web
+    type: html5
+    path: web
+    requires:
+      - name: js_api
+        properties:
+          name: backend
+          url: '~{url}'
+          forwardAuthToken: true
+        group: destinations
+      - name: uaa
+      - name: sapUI5_v160
+    parameters:
+      memory: 128M
+  - name: db
+    type: hdb
+    path: db
+    requires:
+      - name: hdi_db
+  - name: js
+    type: nodejs
+    path: js
+    provides:
+      - name: js_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: hdi_db
+      - name: uaa
+    parameters:
+      memory: 128M

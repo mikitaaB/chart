@@ -1,0 +1,172 @@
+<mvc:View
+		controllerName="my.chart.web.controller.App"
+		displayBlock="true"
+		xmlns="sap.m"
+		xmlns:core="sap.ui.core"
+		xmlns:f="sap.f"
+		xmlns:fb="sap.ui.comp.filterbar"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:control="my.chart.web.control">
+	<App>
+		<f:DynamicPage
+				id="idMainPage"
+				busyIndicatorDelay="0"
+				headerExpanded="{filterTokensModel>/ISFILTERSOPENED}"
+				preserveHeaderStateOnScroll="true">
+			<f:title>
+				<f:DynamicPageTitle>
+					<f:heading>
+						<Title
+								text="{i18n>title}" />
+					</f:heading>
+					<f:actions>
+						<ToolbarSpacer/>
+						<Button
+								id="idChangeLangRuButton"
+								press="onChangeLang"
+								text="{i18n>languageRu}"
+								type="Transparent" />
+						<Button
+								id="idChangeLangEnButton"
+								press="onChangeLang"
+								text="{i18n>languageEn}"
+								type="Transparent" />
+					</f:actions>
+				</f:DynamicPageTitle>
+			</f:title>
+			<f:header>
+				<f:DynamicPageHeader>
+					<f:content>
+						<fb:FilterBar
+								id="idFilterBar"
+								clear="onReset"
+								reset="onReset"
+								search="onApply"
+								showClearOnFB="true"
+								showFilterConfiguration="false"
+								showRestoreOnFB="false"
+								useToolbar="false">
+							<fb:filterItems>
+								<fb:FilterItem
+										label="{i18n>chartType}"
+										name="chartTypeFilter">
+									<fb:control>
+										<Select
+												id="idChartTypeSelect"
+												change="onChartTypeChange"
+												items="{chartTypeModel>/}"
+												selectedKey="{filterTokensModel>/SELECTEDCHARTTYPE}"
+												width="100%">
+											<items>
+												<core:ListItem
+														key="{chartTypeModel>CHARTCODE}"
+														text="{chartTypeModel>CHARTNAME}" />
+											</items>
+										</Select>
+									</fb:control>
+								</fb:FilterItem>
+
+								<fb:FilterItem
+										label="{i18n>country}"
+										name="countryFilter">
+									<fb:control>
+										<Select
+												id="idCountrySelect"
+												change="onCountryChange"
+												items="{countryModel>/}"
+												selectedKey="{filterTokensModel>/SELECTEDCOUNTRY}"
+												width="100%">
+											<items>
+												<core:ListItem
+														key="{countryModel>COUNTRYCODE}"
+														text="{countryModel>COUNTRYNAME}" />
+											</items>
+										</Select>
+									</fb:control>
+								</fb:FilterItem>
+
+								<fb:FilterItem
+										label="{i18n>dayType}"
+										name="dayTypeFilter">
+									<fb:control>
+										<Select
+												id="idPeriodTypeSelect"
+												change="onPeriodTypeChange"
+												items="{periodTypeModel>/}"
+												selectedKey="{filterTokensModel>/SELECTEDPERIODTYPE}"
+												width="100%">
+											<items>
+												<core:ListItem
+														key="{periodTypeModel>PERIODCODE}"
+														text="{periodTypeModel>PERIODNAME}" />
+											</items>
+										</Select>
+									</fb:control>
+								</fb:FilterItem>
+
+								<fb:FilterItem
+										label="{i18n>dataTypes}"
+										name="dataTypesFilter">
+									<fb:control>
+										<MultiComboBox
+												id="idDataTypesMultiCombobox"
+												items="{dataTypeFilterModel>/}"
+												selectedKeys="{filterTokensModel>/SELECTEDDATATYPES}"
+												selectionChange="onFilterDataType"
+												width="100%">
+											<items>
+												<core:Item
+														key="{dataTypeFilterModel>dataTypeKey}" 
+														text="{dataTypeFilterModel>dataTypeText}"/>
+											</items>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterItem>
+
+								<fb:FilterItem
+										label="{i18n>dateFrom}"
+										name="dateFromFilter">
+									<fb:control>
+										<DatePicker
+												id="idDateFrom"
+												dateValue="{filterTokensModel>/DATEFROM}"
+												displayFormat="dd.MM.yyyy"
+												placeholder=" " />
+									</fb:control>
+								</fb:FilterItem>
+
+								<fb:FilterItem
+										label="{i18n>dateTo}"
+										name="dateToFilter">
+									<fb:control>
+										<DatePicker
+												id="idDateTo"
+												dateValue="{filterTokensModel>/DATETO}"
+												displayFormat="dd.MM.yyyy"
+												placeholder=" " />
+									</fb:control>
+								</fb:FilterItem>
+							</fb:filterItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+			<f:content>
+				<Panel
+						class="sapUiSmallMarginTop"
+						height="auto">
+					<control:LineChart
+							id="idLineChart"
+							data="{timeseriesModel>/}"
+							periodicity="{filterTokensModel>/SELECTEDPERIODTYPE}"
+							visible="false" />
+					<control:BarChart
+							id="idBarChart"
+							data="{timeseriesModel>/}"
+							periodicity="{filterTokensModel>/SELECTEDPERIODTYPE}"
+							visible="false" />
+				</Panel>
+			</f:content>
+		</f:DynamicPage>
+	</App>
+</mvc:View>

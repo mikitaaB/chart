@@ -1,0 +1,99 @@
+{
+	"chartType": [
+		{
+			"CHARTCODE": "Line",
+			"CHARTNAME": "Line chart"
+		},
+		{
+			"CHARTCODE": "Bar",
+			"CHARTNAME": "Bar chart"
+		}
+	],
+	"periodType": [
+		{
+			"PERIODCODE": "Daily",
+			"PERIODNAME": "Daily"
+		},
+		{
+			"PERIODCODE": "Monthly",
+			"PERIODNAME": "Monthly"
+		}
+	],
+	"country": [
+		{
+			"COUNTRYCODE": "BY",
+			"COUNTRYNAME": "Belarus"
+		},
+		{
+			"COUNTRYCODE": "RU",
+			"COUNTRYNAME": "Russia"
+		},
+		{
+			"COUNTRYCODE": "UA",
+			"COUNTRYNAME": "Ukraine"
+		},
+		{
+			"COUNTRYCODE": "PL",
+			"COUNTRYNAME": "Poland"
+		},
+		{
+			"COUNTRYCODE": "LT",
+			"COUNTRYNAME": "Lithuania"
+		},
+		{
+			"COUNTRYCODE": "LV",
+			"COUNTRYNAME": "Latvia"
+		}
+	],
+	"timeseries": [
+		{
+			"ID": 1,
+			"DATE": "2020-02-28",
+			"CONFIRMED": 1,
+			"RECOVERED": 0,
+			"DEATHS": 0
+		},
+		{
+			"ID": 3,
+			"DATE": "2020-03-01",
+			"CONFIRMED": 150,
+			"RECOVERED": 42,
+			"DEATHS": 1
+		},
+		{
+			"ID": 11,
+			"DATE": "2020-04-01",
+			"CONFIRMED": 13864,
+			"RECOVERED": 2327,
+			"DEATHS": 87
+		},
+		{
+			"ID": 64,
+			"DATE": "2020-05-01",
+			"CONFIRMED": 15596,
+			"RECOVERED": 27639,
+			"DEATHS": 142
+		},
+		{
+			"ID": 95,
+			"DATE": "2020-06-01",
+			"CONFIRMED": 27278,
+			"RECOVERED": 18715,
+			"DEATHS": 152
+		},
+		{
+			"ID": 125,
+			"DATE": "2020-07-01",
+			"CONFIRMED": 14891,
+			"RECOVERED": 5384,
+			"DEATHS": 161
+		},
+		{
+			"ID": 926,
+			"DATE": "2020-08-01",
+			"CONFIRMED": 6153,
+			"RECOVERED": 2522,
+			"DEATHS": 79
+		}
+	]
+}
